@@ -1,5 +1,5 @@
 #!groovy
-// Check ub1 properties
+// Check linux2 properties
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -13,12 +13,12 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh -o StrictHostKeyChecking=no root@linux2 \'hostname\''
+                sh 'ssh root@linux2 \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh -o StrictHostKeyChecking=no root@linux2 \'uptime\''
+                sh 'ssh root@linux2 \'uptime\''
             }
         }
     }
